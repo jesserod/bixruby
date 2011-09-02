@@ -18,6 +18,15 @@ module Bix
       return true
     end
 
+    def self.from_io(io)
+      fq = Fastq.new
+      if fq.from_io(io)
+        return fq
+      else
+        return nil
+      end
+    end
+
     def qual_val(i)
       return @qual[i].ord
     end
@@ -25,5 +34,13 @@ module Bix
     def to_lines
       return "#{@header}\n#{@seq}\n+\n#{@qual}"
     end
+  end
+
+  def self.get_all_fastqs(io)
+    fqs = []
+    while(fq = Fastq.from_io(io))
+      fqs << fq
+    end
+    return fqs
   end
 end
