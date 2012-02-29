@@ -11,10 +11,15 @@ module Bix
     def from_io(io)
       @header = io.gets
       @seq = io.gets
-      io.gets #plus line
+      io.gets # Throw away + line
       @qual = io.gets
 
       return false if @header == nil || @seq == nil || @qual == nil
+
+      @header.chomp!
+      @seq.chomp!
+      @qual.chomp!
+
       return true
     end
 
