@@ -5,7 +5,7 @@ module Bix
     attr_accessor :chr, :prog, :feature, :start, :stop, :score, :strand, :frame, :props
 
     def from_line(line)
-      f = line.chomp.split("\t", -1)
+      f = line.chomp.rstrip.split("\t", -1)
       @chr = f[0]
       @prog = f[1]
       @feature = f[2]
@@ -32,6 +32,10 @@ module Bix
 
         @props[key] = value
       end
+    end
+
+    def size
+      return @stop - @start + 1
     end
 
     # E.g. to get all exons
