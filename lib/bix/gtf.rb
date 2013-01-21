@@ -13,10 +13,10 @@ module Bix
       raise if @start < 1
       @stop = f[4].to_i
       raise if @stop < 1
-      @score = f[5].to_f
+      @score = f[5]
       @strand = f[6]
       raise if @strand.size > 1
-      @frame = f[7].to_i
+      @frame = f[7]
 
       group = f[8]
 
