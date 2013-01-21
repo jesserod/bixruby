@@ -68,7 +68,11 @@ module Bix
         if i > 0
           propstr << " "
         end
-        propstr << "#{key} \"#{value}\";"
+        if value.include?(" ")
+          propstr << "#{key} \"#{value}\";"
+        else
+          propstr << "#{key} #{value};"
+        end
         i += 1
       end
       return [@chr, @prog, @feature, @start, @stop, @score, @strand, @frame, propstr].join("\t")
