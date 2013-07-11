@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'bix'
-  s.version     = '0.0.8'
-  s.date        = 2013-1-21
+  s.version     = '0.0.9'
+  s.date        = 2013-7-10
   s.summary     = "Lightweight bioinformatics tools for Ruby"
   s.description = "Lightweight bioinformatics tools for Ruby, with a focus on next-gen sequencing" 
   s.authors     = ["Jesse Rodriguez"]
