@@ -1,14 +1,6 @@
-Overview
-============
-
 This gem provides several classes useful for bioinformatics.
 
-To install, just install the `bix` gem:
-
-    sudo gem install bix
-
-
-Overview
+Usage
 ====
     # Fasta/fastq data
     fas = Bix::read_fastas(io)
@@ -31,3 +23,9 @@ Overview
     tped = Bix::read_tped(file)
     tped = Bix::read_tped(file, tfam) # to access by name not idx
     frq  = Bix::read_frq(file)
+
+Installation
+============
+To install, just install the `bix` gem:
+
+    sudo gem install bix
